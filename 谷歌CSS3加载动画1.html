@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>谷歌CSS3加载动画1</title>
+    <style>
+        body {
+            background-color: #573a65;
+        }
+
+        .icoBox {
+            /* 父盒子宽度的33.33% - 10px */
+            width: calc(33.33% - 10px);
+            height: 170px;
+            margin: 100px auto;
+            background-color: #040038;
+            border: 1px solid rgba(255, 255, 255, .1);
+            /* 弹性伸缩显示 */
+            display: flex;
+            /* 弹性布局内容对齐 横轴 */
+            /* 
+                flex-start 默认值,位于容器开头
+                flex-end 位于容器结尾
+                center 元素居中
+                space-between 位于各行之间留有空白的容器内
+                space-around 位于各行之前,之间,之后留有空白的容器内
+             */
+            justify-content: center;
+            /* 弹性布局内容对齐 纵轴 */
+            /* 
+                stretch 默认值,元素拉伸适应容器
+                center 元素居中
+                flex-start  位于容器开头
+                flex-end 位于容器结尾
+                baseline 位于容器的基线
+             */
+            align-items: center;
+        }
+
+        .icon {
+            width: 30px;
+            height: 30px;
+            position: relative;
+        }
+
+        .animation1 {
+            /* 旋转45度 */
+            transform: rotate(45deg)
+        }
+
+        .shape {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 1px;
+        }
+
+        .shape:nth-child(1) {
+            left: 0;
+            background-color: #5C6BC0;
+            animation: shape1 .5s ease alternate infinite;
+        }
+
+        @keyframes shape1 {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(16px, 16px);
+            }
+        }
+
+        .shape:nth-child(2) {
+            right: 0;
+            background-color: #8BC34A;
+            animation: shape2 .5s ease alternate infinite;
+        }
+
+        @keyframes shape2 {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(-16px, 16px);
+            }
+        }
+
+        .shape:nth-child(3) {
+            bottom: 0;
+            background-color: #FFB74D;
+            animation: shape3 .5s ease alternate infinite;
+        }
+
+        @keyframes shape3 {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(16px, -16px);
+            }
+        }
+
+        .shape:nth-child(4) {
+            bottom: 0;
+            right: 0;
+            background-color: #F44336;
+            animation: shape4 .5s ease alternate infinite;
+        }
+
+        @keyframes shape4 {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            100% {
+                transform: translate(-16px, -16px);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="icoBox">
+        <div class="icon animation1">
+            <i class="shape"></i>
+            <i class="shape"></i>
+            <i class="shape"></i>
+            <i class="shape"></i>
+        </div>
+    </div>
+</body>
+
+</html>

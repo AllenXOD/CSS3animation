@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网易阴阳师抖动小箭头</title>
+    <style>
+        body {
+            background-color: #573a65;
+        }
+        div {
+            width: 200px;
+            height: 20px;
+            margin: 100px auto;
+            padding-top: 15px;
+            border: 1px solid skyblue;
+        }
+        .arrow {
+            display: block;
+            width: 41px;
+            height: 5px;
+            background: url("https://yys.res.netease.com/pc/gw/20180913151832/img/arrow_245be57.png") no-repeat;
+            margin-left: 120px;
+        }
+        div:hover .arrow {
+            animation: icon .8s ease-in-out 1;
+        }
+        @keyframes icon {
+            0% {
+                margin-left: 120px;
+            }
+            30% {
+                margin-left: 110px;
+            }
+            50% {
+                margin-left: 120px;
+            }
+            70% {
+                margin-left: 114px;
+            }
+            90% {
+                margin-left: 120px;
+            }
+            95% {
+                margin-left: 117px;
+            }
+            100% {
+                margin-left: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span class="arrow"></span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #222222;
+            perspective: 1200px;
+        }
+        ul {
+            width: 200px;
+            height: 200px;
+            padding: 0;
+            list-style: none;
+            /* background-color: #000; */
+            margin: 120px auto;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: xunz 10s infinite alternate;
+        }
+
+        @keyframes xunz {
+            0%{}
+            50% {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+            100% {
+                transform: rotateX(100deg) rotateY(60deg);
+            }
+        }
+        li {
+            width: 100%;
+            height: 100%;
+            background-Color: #000;
+            position: absolute;
+            transition: all 1s;
+            font-size: 30px;
+            text-align: center;
+        }
+        li:nth-child(1) {
+            transform: rotate(0deg) translateZ(100px);
+            box-shadow: 0 0 10px 3px pink;
+        }
+        ul:hover li:nth-child(1) {
+            background-Color: pink;
+            box-shadow: 0 0 90px 5px pink;
+        }
+        li:nth-child(2) {
+            transform: rotateX(90deg) translateZ(100px);
+            box-shadow: 0 0 10px 3px skyblue;
+        }
+        ul:hover li:nth-child(2) {
+            background-Color: skyblue;
+            box-shadow: 0 0 90px 5px skyblue;
+        }
+        li:nth-child(3) {
+            transform: rotateX(180deg) translateZ(100px);
+            box-shadow: 0 0 10px 3px orangered;
+        }
+        ul:hover li:nth-child(3) {
+            background-Color: orangered;
+            box-shadow: 0 0 90px 5px orangered;
+        }
+        li:nth-child(4) {
+            transform: rotateX(270deg) translateZ(100px);
+            box-shadow: 0 0 10px 3px greenyellow;
+        }
+        ul:hover li:nth-child(4) {
+            background-Color: greenyellow;
+            box-shadow: 0 0 90px 5px greenyellow;
+        }
+        li:nth-child(5) {
+            transform: rotateY(90deg) translateZ(100px);
+            box-shadow: 0 0 10px 3px powderblue;
+        }
+        ul:hover li:nth-child(5) {
+            background-Color: powderblue;
+            box-shadow: 0 0 90px 5px powderblue;
+        }
+        li:nth-child(6) {
+            transform: rotateY(270deg) translateZ(100px);
+            box-shadow: 0 0 10px 3px peachpuff;
+        }
+        ul:hover li:nth-child(6) {
+            background-Color: peachpuff;
+            box-shadow: 0 0 90px 5px peachpuff;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+</body>
+</html>

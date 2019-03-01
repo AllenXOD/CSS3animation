@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+        body {
+            background-color: #232323;
+        }
+
+        .box {
+            width: 560px;
+            height: 300px;
+            border: 1px solid rgba(255, 255, 255, .6);
+            margin: 150px auto;
+            position: relative;
+            background: url("./images/1.png") no-repeat;
+        }
+
+        .icon a {
+            width: 80px;
+            height: 60px;
+            display: block;
+            background-color: rgba(0, 0, 0, .3);
+            position: absolute;
+            top: 50%;
+            margin-top: -30px;
+            font-size: 42px;
+            color: #fff;
+            text-align: center;
+            line-height: 60px;
+            text-decoration: none;
+        }
+
+        .arrPrev {
+            left: 0;
+        }
+
+        .arrNext {
+            right: 0;
+        }
+
+        .itemImg {
+            width: 20%;
+            height: 100%;
+            position: absolute;
+            transform-style: preserve-3d;
+            transition: all 1s;
+        }
+
+        .img {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+        }
+
+        .itemImg:nth-child(1) {
+            left: 0;
+            transition-delay: 0s;
+        }
+
+        .itemImg:nth-child(2) {
+            transition-delay: .3s;
+            left: 112px;
+        }
+
+        .itemImg:nth-child(3) {
+            transition-delay: .6s;
+            left: 224px;
+        }
+
+        .itemImg:nth-child(4) {
+            transition-delay: .9s;
+            left: 336px;
+        }
+
+        .itemImg:nth-child(5) {
+            transition-delay: 1.2s;
+            left: 448px;
+        }
+
+        .img:nth-child(1) {
+            background: url("images/1.png") no-repeat;
+            transform: translateZ(150px);
+        }
+
+        .img:nth-child(2) {
+            background: url("images/2.png") no-repeat;
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+
+        .img:nth-child(3) {
+            background: url("images/3.png") no-repeat;
+            transform: rotateX(-180deg) translateZ(150px);
+        }
+
+        .img:nth-child(4) {
+            background: url("images/4.png") no-repeat;
+            transform: rotateX(-270deg) translateZ(150px);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" class="box">
+        <div class="itemImg">
+            <a href="https://www.baidu.com?index=1" class="img" style="background-position: 0 center;"></a>
+            <a href="https://www.baidu.com?index=2" class="img" style="background-position: 0 center;"></a>
+            <a href="https://www.baidu.com?index=3" class="img" style="background-position: 0 center;"></a>
+            <a href="https://www.baidu.com?index=4" class="img" style="background-position: 0 center;"></a>
+        </div>
+        <div class="itemImg">
+            <a href="https://www.baidu.com?index=1" class="img" style="background-position: -112px center;"></a>
+            <a href="https://www.baidu.com?index=2" class="img" style="background-position: -112px center;"></a>
+            <a href="https://www.baidu.com?index=3" class="img" style="background-position: -112px center;"></a>
+            <a href="https://www.baidu.com?index=4" class="img" style="background-position: -112px center;"></a>
+        </div>
+        <div class="itemImg">
+            <a href="https://www.baidu.com?index=1" class="img" style="background-position: -224px center;"></a>
+            <a href="https://www.baidu.com?index=2" class="img" style="background-position: -224px center;"></a>
+            <a href="https://www.baidu.com?index=3" class="img" style="background-position: -224px center;"></a>
+            <a href="https://www.baidu.com?index=4" class="img" style="background-position: -224px center;"></a>
+        </div>
+        <div class="itemImg">
+            <a href="https://www.baidu.com?index=1" class="img" style="background-position: -336px center;"></a>
+            <a href="https://www.baidu.com?index=2" class="img" style="background-position: -336px center;"></a>
+            <a href="https://www.baidu.com?index=3" class="img" style="background-position: -336px center;"></a>
+            <a href="https://www.baidu.com?index=4" class="img" style="background-position: -336px center;"></a>
+        </div>
+        <div class="itemImg">
+            <a href="https://www.baidu.com?index=1" class="img" style="background-position: -448px center;"></a>
+            <a href="https://www.baidu.com?index=2" class="img" style="background-position: -448px center;"></a>
+            <a href="https://www.baidu.com?index=3" class="img" style="background-position: -448px center;"></a>
+            <a href="https://www.baidu.com?index=4" class="img" style="background-position: -448px center;"></a>
+        </div>
+        <div class="icon">
+            <a href="javascript:void(0);" class="arrPrev">&lt;</a>
+            <a href="javascript:void(0);" class="arrNext">&gt;</a>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    var itemImg = document.querySelectorAll('.itemImg');
+    var arrPrev = document.querySelector('.arrPrev');
+    var arrNext = document.querySelector('.arrNext');
+    var box = document.querySelector('#box');
+    var index = 0;
+    var timer;
+    var flag = true;
+    timer = setInterval(function () {
+        index++;
+        anima();
+    }, 6000);
+
+    box.onmouseenter = function () {
+        clearInterval(timer);
+        arrPrev.onclick = function () {
+            if (!flag) return false;
+            flag = false;
+            index--;
+            anima();
+        }
+        arrNext.onclick = function () {
+            if (!flag) return false;
+            flag = false;
+            index++;
+            anima();
+        }
+    };
+    box.onmouseleave = function () {
+        timer = setInterval(function () {
+            index++;
+            anima();
+        }, 6000);
+    };
+// console.log(box.children[4]);
+
+    box.children[4].addEventListener('transitionend', function () {
+        flag = true;
+    })
+
+    function anima() {
+        for (var i = 0; i < itemImg.length; i++) {
+            itemImg[i].style.transform = "rotateX( " + index * -90 + "deg )";
+        }
+    }
+
+    // for(var i = 0 ; i <= img.length ; i++)
+    // img.addEventListener
+
+</script>

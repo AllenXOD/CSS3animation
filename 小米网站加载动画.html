@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>小米网站加载动画</title>
+    <style>
+        body {
+            background-color: #573a65;
+        }
+        .loader {
+            width: 4px;
+            height: 20px;
+            position: relative;
+            background: #ff6700;
+            margin: 100px auto;
+            animation-delay: 0s;
+            /* transform: scale(1, 1); */
+        }
+
+        .loader::before,
+        .loader::after {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 4px;
+            height: 20px;
+            content: "";
+            background-color: #ff6700;
+        }
+
+        .loader::before {
+            margin: -10px 0 0 -10px;
+            animation-delay: .25s;
+            /* 定义2d缩放转换 x轴, y轴 */
+            transform: scale(1, 0.3);
+        }
+
+        .loader::after {
+            margin: -10px 0 0 6px;
+            /* 动画延迟 */
+            animation-delay: .5s;
+            transform: scale(1, 0.5);
+        }
+
+        .loader,
+        .loader::before,
+        .loader::after {
+            /* 设置视图转换的轴心 */
+            /* 
+                x-axis 旋转轴心的x坐标
+                y-axis 旋转轴心的y坐标
+                z-axis 旋转轴心的z坐标
+             */
+            transform-origin: 50% 50%;
+            /* 绑定动画名称 */
+            animation-name: loader;
+            /* 动画持续时间 */
+            animation-duration: .3s;
+            /* 动画速度曲线 */
+            animation-timing-function: linear;
+            /* 动画播放次数 */
+            animation-iteration-count: infinite;
+            /* 是否轮流反向播放动画 */
+            /* 
+                normal  默认值 正常播放
+                reverse  动画反向播放
+                alternate  动画在奇数次正向播放,在偶数次反向播放
+                alternate-reverse  动画在奇数次反向播放,在偶数次正向播放
+             */
+            animation-direction: alternate-reverse;
+        }
+        @keyframes loader {
+            from{
+                opacity: 0.5;
+                transform: scale(1,0.4);
+                }
+            to{
+                opacity: 1;
+                transform: scale(1,1);
+                }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loader"></div>
+</body>
+
+</html>

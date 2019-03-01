@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网易第五人格小波浪动画</title>
+    <style>
+        body {
+            background-color: #0d141a;
+        }
+
+        .audio {
+            width: 25px;
+            height: 28px;
+            display: block;
+            position: relative;
+            margin: 100px auto;
+        }
+
+        i {
+            width: 25px;
+            height: 28px;
+            display: block;
+        }
+
+        em {
+            width: 2px;
+            height: 20px;
+            float: left;
+            display: block;
+            background-color: #be3708;
+            margin: 4px 1.5px;
+            transform-origin: 50% 100%;
+        }
+
+        @keyframes icon {
+            from {
+                transform: scale(1, 0.3);
+                background-color: #be3708;
+            }
+
+            to {
+                transform: scale(1, 1);
+                background-color: #8c8c8c;
+            }
+        }
+
+        em:nth-child(1) {
+            animation: icon 1s alternate infinite;
+        }
+
+        em:nth-child(2) {
+            animation: icon 1s .3s alternate infinite;
+        }
+
+        em:nth-child(3) {
+            animation: icon 1s .6s alternate infinite;
+        }
+
+        em:nth-child(4) {
+            animation: icon 1s .9s alternate infinite;
+        }
+    </style>
+</head>
+
+<body>
+    <a class="audio">
+        <i>
+            <em></em>
+            <em></em>
+            <em></em>
+            <em></em>
+        </i>
+    </a>
+</body>
+
+</html>

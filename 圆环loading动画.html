@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>圆环loading动画</title>
+    <style>
+        body {
+            background-color: #573a65;
+        }
+        .box { 
+            width: 140px;
+            height: 140px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -70px;
+            margin-top: -70px;
+        }
+        .bg {
+            width: 140px;
+            height: 140px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 70px;
+            box-shadow: 0 0 10px 4px rgba(65, 0, 97, 0.3) inset;
+        }
+
+        .load {
+            width: 140px;
+            height: 140px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 70px;
+            box-shadow: 0 4px 0 #00abf2 inset;
+            animation: rotate 1s linear infinite;
+        }
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="bg"></div>
+        <div class="load"></div>
+    </div>
+
+</body>
+
+</html>

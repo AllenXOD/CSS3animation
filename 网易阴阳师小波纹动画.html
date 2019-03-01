@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网易阴阳师小波纹动画</title>
+    <style>
+        body {
+            background-color: #573a65;
+        }
+
+        .point {
+            width: 46px;
+            height: 46px;
+            display: block;
+            position: relative;
+            margin: 100px auto;
+        }
+        i {
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            border: 1px solid #fff;
+            display: block;
+            border-radius: 100%;
+            /* 定义3d缩放转换 */
+            transform: translate3d(-50%,-50%,0);
+        }
+        i:nth-child(1) {
+            animation: icon 2s linear infinite;
+        }
+        i:nth-child(2) {
+            animation: icon 2s linear 1s infinite;
+        }
+        @keyframes icon {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                width: 60px;
+                height: 60px;
+                opacity: 1;
+            }
+            100% {
+                width: 90px;
+                height: 90px;
+                opacity: 0;
+            }
+        }
+        span {
+            display: none;
+            background: url("https://yys.res.netease.com/pc/zt/20190125182140/img/spriter/index_z_ec47a3b.png");
+            /* background-position: -1385px -627px; */
+            background-position: -1339px -627px;
+            background-repeat: no-repeat;
+            width: 46px;
+            height: 46px;
+            display: block;
+            transition: all .3s linear;
+        }
+
+        .point:hover span {
+            /* 定义2d缩放 */
+            transform: scale(0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <a class="point">
+        <i></i>
+        <i></i>
+        <span></span>
+    </a>
+</body>
+
+</html>
